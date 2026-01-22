@@ -23,7 +23,19 @@ module.exports = [
     name: 'Blueprint Orchestrator',
     description: 'Orchestrates the execution of Foundation, Structural-Data, Behavior, and Ops-Docs architects with resilience and resumability',
     promptPath: path.join(promptsDir, 'codemachine', 'main-agents', '02-blueprint-orchestrator.md'),
-    engine: 'codex' 
+    engine: 'codex',
+    mcp: [
+      {
+        server: 'agent-coordination',
+        targets: [
+          'founder-architect',
+          'structural-data-architect',
+          'behavior-architect',
+          'operational-architect',
+          'ui-ux-architect'
+        ]
+      }
+    ]
   },
   {
     id: 'plan-agent',
